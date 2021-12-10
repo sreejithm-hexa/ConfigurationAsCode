@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Configuration as Code"
+  systemMessage: "Configuration"
   numExecutors: 3
   mode: NORMAL
 tool:
@@ -13,7 +13,9 @@ securityRealm:
 jobs:
   - script: >
       freeStyleJob('TEST FREESTYLE JOB') {
-        shell(echo "this is freestyle job")
+       steps {
+        echo "freestyle job running"
+    }
       }
   - script: >
       pipelineJob('TEST PIPELINE JOB') {
@@ -26,7 +28,7 @@ jobs:
                 stages {
                   stage ('test') {
                     steps {
-                      echo "hello"
+                      echo "pipeline job running"
                     }
                   }
                 }
