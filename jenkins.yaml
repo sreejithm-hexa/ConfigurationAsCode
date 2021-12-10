@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "\n CONFIG \n"
+  systemMessage: "Configuration as Code"
   numExecutors: 3
   mode: NORMAL
 tool:
