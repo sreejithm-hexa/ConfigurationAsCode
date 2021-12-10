@@ -7,67 +7,18 @@ jenkins:
   securityRealm:
     local:
       allowsSignup: false
-  nodes:
-    - permanent:
-        name: "SLAVE"
-        numExecutors: 3
-        mode: NORMAL
-        remoteFS: "/home/jenkins"
-        launcher:
-          jnlp:
-            workDirSettings:
-              disabled: true
-              failIfWorkDirIsMissing: false
-              internalDir: "remoting"
-              workDirPath: "/tmp"
+  
 security:
   remotingCLI:
     enabled: false
     
-credentials:
-  system:
-    domainCredentials:
-      - credentials:
-          - usernamePassword:
-              scope: GLOBAL
-              id: github
-              username: "abcdef"
-              password: ${github}
- unclassified:    
-  location:
-    adminAddress: admin@abcd.com
-    url: http://127.0.0.1:8080/
-              
-  globalLibraries:
-    libraries:
-      - name: "demo-lib"
-        retriever:
-          modernSCM:
-            scm:
-              git:
-                remote: "https://github.com/Praqma/praqma-jenkins-casc-shared-lib-demo"
-        
+
+
 tools:
   git:
     installations:
-      - name: git
+      - name: git2
         home: /usr/local/bin/git
-        
-jobs:
-  - script: >
-      PipelineJob('JobCreatedByConfig') {
-        pipeline {
-          agent any
 
-          stages {
-              stage('Hello') {
-                  steps {
-                      echo 'Hello World'
-                  }
-              }
-           }
-        }
-      }
- 
 
         
