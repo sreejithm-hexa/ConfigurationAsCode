@@ -29,7 +29,7 @@ tools:
         
 jobs:
   - script: >
-      multibranchPipelineJob('JobCreatedByConfig') {
+      PipelineJob('JobCreatedByConfig') {
         pipeline {
           agent any
 
@@ -40,7 +40,7 @@ jobs:
                   }
               }
            }
-      }
+        }
       }
  
 
