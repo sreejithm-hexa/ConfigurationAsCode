@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "\n Hello, This is a Test Configuration file \n"
+  systemMessage: "\n change \n"
   numExecutors: 3
   quietPeriod: 120
   scmCheckoutRetryCount: 3
