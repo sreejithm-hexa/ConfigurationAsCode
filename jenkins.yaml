@@ -3,9 +3,10 @@ jenkins:
   numExecutors: 3
 jobs:
   - script: >
-      pipelineJob('testjobs/default-agent') {
+      pipelineJob('SEED') {
         definition {
           cps {
+            sandbox(true)
             script(
               pipeline {
                 agent any
