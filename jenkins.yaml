@@ -2,13 +2,15 @@ jenkins:
   systemMessage: "\n URL \n"
   numExecutors: 3
 jobs:
-  - script: >
-    PipelineJob('configuration-as-code') {
+  - script: |
+    pipelineJob('configuration-as-code') {
           pipeline {
             agent any
             stages {
               stage("TEST") {
-                echo "HELLO, THIS WORKS!!"
+                  steps {
+                      echo "HELLO, THIS WORKS!!"
+                   }
               }
             }
            }     
