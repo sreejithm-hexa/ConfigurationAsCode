@@ -1,2 +1,47 @@
 jenkins:
   systemMessage: "\n Hello, This is a Test Configuration file \n"
+  numExecutors: 3
+  quietPeriod: 120
+  scmCheckoutRetryCount: 3
+  mode: NORMAL
+  securityRealm:
+    local:
+      allowsSignup: false
+  nodes:
+    - permanent:
+        name: "SLAVE"
+        numExecutors: 3
+        mode: NORMAL
+        remoteFS: "/home/jenkins"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: true
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+              workDirPath: "/tmp"
+        
+tools:
+  git:
+    installations:
+      - name: git
+        home: /usr/local/bin/git
+        
+jobs:
+  - script: >
+      multibranchPipelineJob('JobCreatedByConfig') {
+        pipeline {
+          agent any
+
+          stages {
+              stage('Hello') {
+                  steps {
+                      echo 'Hello World'
+                  }
+              }
+           }
+      }
+      }
+ 
+
+        
