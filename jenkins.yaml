@@ -1,17 +1,7 @@
 jenkins:
   systemMessage: "\n change \n"
   numExecutors: 3
-  quietPeriod: 120
-  scmCheckoutRetryCount: 3
-  mode: NORMAL
-  securityRealm:
-    local:
-      allowsSignup: false
-  
-security:
-  remotingCLI:
-    enabled: false
-    
+
 
 
 tools:
