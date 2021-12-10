@@ -1,15 +1,11 @@
 jenkins:
   systemMessage: "Configuration"
   numExecutors: 3
-  mode: NORMAL
 tool:
   git:
     installations:
       - name: git
         home: /usr/local/bin/git
-securityRealm:
-    local:
-      allowsSignup: false
 jobs:
   - script: >
       freeStyleJob('TEST FREESTYLE JOB') {
