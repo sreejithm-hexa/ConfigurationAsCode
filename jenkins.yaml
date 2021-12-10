@@ -7,8 +7,6 @@ tool:
       - name: git
         home: /usr/local/bin/git
 jobs:
-  - script: > 
-      
   - script: >
       pipelineJob('TEST PIPELINE JOB') {
         definition {
