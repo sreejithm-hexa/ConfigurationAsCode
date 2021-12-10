@@ -2,12 +2,14 @@ jenkins:
   systemMessage: "\n URL \n"
   numExecutors: 3
 jobs:
+  - script: > 
+      
   - script: >
-      pipelineJob('SEED') {
+      pipelineJob('TEST PIPELINE JOB') {
         definition {
           cps {
             sandbox(true)
-            script(
+            script("""\
               pipeline {
                 agent any
                 stages {
@@ -17,7 +19,8 @@ jobs:
                     }
                   }
                 }
-              })
+              }""".stripIndent())
           }
         }
       }
+   
