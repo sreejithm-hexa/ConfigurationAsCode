@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Configuration"
+  systemMessage: "Config"
   numExecutors: 3
 tool:
   git:
