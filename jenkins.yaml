@@ -1,11 +1,15 @@
 jenkins:
   systemMessage: "\n TESTING \n"
   numExecutors: 3
+  mode: NORMAL
 tool:
   git:
     installations:
       - name: git
         home: /usr/local/bin/git
+securityRealm:
+    local:
+      allowsSignup: false
 jobs:
   - script: >
       pipelineJob('TEST PIPELINE JOB') {
