@@ -1,6 +1,11 @@
 jenkins:
-  systemMessage: "\n URL \n"
+  systemMessage: "\n TESTING \n"
   numExecutors: 3
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/local/bin/git
 jobs:
   - script: > 
       
