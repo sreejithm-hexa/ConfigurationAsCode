@@ -1,11 +1,6 @@
 jenkins:
   systemMessage: "\n URL \n"
   numExecutors: 3
-tools:
-  git:
-    installations:
-      - name: git2
-        home: /usr/local/bin/git
 
 
         
