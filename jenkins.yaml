@@ -1,35 +1,19 @@
-jenkins:
-  systemMessage: "Config"
-  numExecutors: 3
-tool:
-  git:
-    installations:
-      - name: git
-        home: /usr/local/bin/git
 jobs:
   - script: >
-      freeStyleJob('TEST FREESTYLE JOB') {
-       steps {
-        echo "freestyle job running"
-    }
-      }
-  - script: >
-      pipelineJob('TEST PIPELINE JOB') {
-        definition {
-          cps {
-            sandbox(true)
-            script("""\
-              pipeline {
-                agent any
-                stages {
-                  stage ('test') {
-                    steps {
-                      echo "pipeline job running"
+      pipelineJob('maven-pipeline-version-controlled') {
+          definition {
+              triggers {
+                  cron('H/5 * * * *')
+              }
+              cpsScm {
+                  scm {
+                    git {
+                        remote { url 'https://github.com/tsundberg/maven-build-with-jenkins-pipeline.git' }
+                        branch '*/master'
+                        extensions {}
                     }
                   }
-                }
-              }""".stripIndent())
+                  scriptPath 'src/ci/Jenkinsfile'
+              }
           }
-        }
       }
-   
