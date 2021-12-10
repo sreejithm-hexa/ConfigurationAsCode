@@ -12,6 +12,10 @@ securityRealm:
       allowsSignup: false
 jobs:
   - script: >
+      freeStyleJob('TEST FREESTYLE JOB') {
+        shell(echo "this is freestyle job")
+      }
+  - script: >
       pipelineJob('TEST PIPELINE JOB') {
         definition {
           cps {
