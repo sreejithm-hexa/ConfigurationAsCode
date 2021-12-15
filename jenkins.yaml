@@ -1,19 +1,75 @@
-jobs:
-  - script: >
-      pipelineJob('maven-pipeline-version-controlled') {
-          definition {
-              triggers {
-                  cron('H/5 * * * *')
-              }
-              cpsScm {
-                  scm {
-                    git {
-                        remote { url 'https://github.com/tsundberg/maven-build-with-jenkins-pipeline.git' }
-                        branch '*/master'
-                        extensions {}
-                    }
-                  }
-                  scriptPath 'src/ci/Jenkinsfile'
-              }
-          }
-      }
+jenkins:
+  systemMessage: "THIS IS JENKINS SERVER COMFIGURATION"
+  numExecutors: 3
+  quietPeriod: 5
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  markupFormatter: "plainText"
+  myViewsTabBar: "standard"
+  primaryView:
+    all:
+      name: "All"
+  projectNamingStrategy: "standard"
+  disableRememberMe: false
+  mode: NORMAL
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "sreejth"
+        name: "Sreejith M"
+        password: "sreejith"
+        properties:
+        - mailer:
+            emailaddress: "sreejth@gmail.com"
+      - id: "abi"
+        name: "ABI"
+        password: "$2a$10$LP4bMhwyCPnsDm.XRcTZSuBqWYKGAiDAsQXrSrJGYcEd9padaPgsC"
+        properties:
+          - mailer:
+              emailaddress: "abi@gamil.com"
+
+security:
+  ApiTokenPropertyConfiguration:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+
+tool:
+  gradle:
+    installations:
+      name: gradle
+      home: "/opt/gradle/gradle-6.4.1"
+  git:
+    installations:
+      name: default
+      home: "git"
+  maven:
+    installations:
+      name: maven
+      home: "/opt/apache-maven-3.6.3/"
+  jdk:
+    installations:
+      name: jdk
+      home: "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"
+
+unclassified:
+  globalLibraries:
+    libraries:
+      name: "Shared-Library"
+      defaultVersion: "main"
+      implicit: false
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              remote: "https://HexOne@dev.azure.com/HexOne/PV/_git/Shared-Library"
+              traits: 
+                - gitBranchDiscovery
