@@ -45,16 +45,16 @@ security:
 tool:
   gradle:
     installations:
-      name: gradle
-      home: "/opt/gradle/gradle-6.4.1"
+      - name: gradle
+        home: "/opt/gradle/gradle-6.4.1"
   git:
     installations:
-      name: default
-      home: "git"
+      - name: default
+        home: "git"
   maven:
     installations:
-      name: maven
-      home: "/opt/apache-maven-3.6.3/"
+      - name: maven
+        home: "/opt/apache-maven-3.6.3/"
   jdk:
     installations:
       name: jdk
