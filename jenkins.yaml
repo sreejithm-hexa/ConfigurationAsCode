@@ -47,10 +47,6 @@ tool:
     installations:
       - name: gradle
         home: "/opt/gradle/gradle-6.4.1"
-  git:
-    installations:
-      - name: default
-        home: "git"
   maven:
     installations:
       - name: maven
