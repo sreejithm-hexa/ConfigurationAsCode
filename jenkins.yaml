@@ -41,20 +41,6 @@ security:
     creationOfLegacyTokenEnabled: false
     tokenGenerationOnCreationEnabled: false
     usageStatisticsEnabled: true
-    
-unclassified:
-  globalLibraries:
-    libraries:
-      name: "Shared-Library"
-      defaultVersion: "main"
-      implicit: false
-      retriever:
-        modernSCM:
-          scm:
-            git:
-              remote: "https://HexOne@dev.azure.com/HexOne/PV/_git/Shared-Library"
-              traits: 
-                - gitBranchDiscovery
 
 tool:
   gradle:
