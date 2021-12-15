@@ -37,7 +37,7 @@ jenkins:
               emailAddress: "abi@gamil.com"
 
 security:
-  ApiTokenPropertyConfiguration:
+  apiToken:
     creationOfLegacyTokenEnabled: false
     tokenGenerationOnCreationEnabled: false
     usageStatisticsEnabled: true
