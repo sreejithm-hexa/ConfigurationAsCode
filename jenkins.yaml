@@ -28,13 +28,13 @@ jenkins:
         password: "sreejith"
         properties:
         - mailer:
-            emailaddress: "sreejth@gmail.com"
+            emailAddress: "sreejth@gmail.com"
       - id: "abi"
         name: "ABI"
         password: "$2a$10$LP4bMhwyCPnsDm.XRcTZSuBqWYKGAiDAsQXrSrJGYcEd9padaPgsC"
         properties:
           - mailer:
-              emailaddress: "abi@gamil.com"
+              emailAddress: "abi@gamil.com"
 
 security:
   ApiTokenPropertyConfiguration:
