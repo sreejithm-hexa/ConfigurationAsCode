@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "THIS IS JENKINS SERVER COMFIGURATION"
+  systemMessage: "JENKINS Sreejith"
   numExecutors: 3
   quietPeriod: 5
   authorizationStrategy:
@@ -42,18 +42,30 @@ security:
     tokenGenerationOnCreationEnabled: false
     usageStatisticsEnabled: true
 
+
 tool:
-  gradle:
-    installations:
-      - name: gradle
-        home: "/opt/gradle/gradle-6.4.1"
   maven:
     installations:
-      - name: maven
-        home: "/opt/apache-maven-3.6.3/"
-  jdk:
+     - name: maven
+       home: "/opt/apache-maven-3.6.3/"
+  tool:
+  git:
     installations:
-      name: jdk
-      home: "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"
+      - name: git
+        home: /bin/git
+      - name: another_git
+        home: /usr/local/bin/git
 
+unclassified:
+  globalLibraries:
+    libraries:
+      - name: "Shared-Library"
+        defaultVersion: "main"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "https://HexOne@dev.azure.com/HexOne/PV/_git/Shared-Library"
+                traits: 
+                  - gitBranchDiscovery
 
