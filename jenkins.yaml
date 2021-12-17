@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "JENKINS change"
+  systemMessage: "J"
   numExecutors: 3
   quietPeriod: 5
   authorizationStrategy:
