@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "J"
+  systemMessage: "sreejith"
   numExecutors: 3
   quietPeriod: 5
   authorizationStrategy:
